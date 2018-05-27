@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Steam</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <style>
+        #section-1{
+          animation-delay:1s;
+          animation-duration:1s;
+          animation-iteration-count: 1;
+        }
+        #section-2{
+          animation-delay:2s;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="animated slideInDown text-center bg-primary text-white p-5">
+        <h1 class = "display-4">Animate.CSS</h1>
+      </header>
+      <section id="section-1" class="animated slideInLeft bg-faded p-5 my-3">
+        <h1>Fifa</h1>
+        <p>FIFA 18 is a football simulation video game in the FIFA series of video games, developed and published by Electronic Arts and was released worldwide on 29 September 2017 for Microsoft Windows, PlayStation 3, PlayStation 4, Xbox 360, Xbox One and Nintendo Switch. It is the 25th instalment in the FIFA series. Real Madrid forward Cristiano Ronaldo appears as the cover athlete of the regular edition. Ronaldo Nazario appears on the icon edition of the game.
+
+FIFA 18 is the second instalment in the series to use the Frostbite 3 game engine, although some versions of the game use a different game engine. The PlayStation 4 and Xbox One versions include a continuation of "The Journey" a story-based mode that was originally in FIFA 17 entitled "The Journey: Hunter Returns". The PlayStation 3 and Xbox 360 versions, known as FIFA 18: Legacy Edition, do not contain any new gameplay features aside from updated kits and squads.[2]</p>
+      </section>
+      <section id="section-2" class="animated slideInRight bg-faded p-5 my-3">
+        <h1 id="anim-head">Fortnite</h1>
+        <p id="anim-body">rtnite is a co-op sandbox survival game developed by Epic Games and People Can Fly and published by Epic Games. The game was released as a paid-for early access title for Microsoft Windows, macOS, PlayStation 4 and Xbox One on July 25, 2017, with a full free-to-play release expected in 2018. The retail versions of the game were published by Gearbox Publishing, while online distribution of the PC versions is handled by Epic's launcher.
+
+Fortnite is set in contemporary Earth, where the sudden appearance of a worldwide storm causes 98% of the world's population to disappear, and zombie-like creatures rise to attack the remainder. Considered by Epic as a cross between Minecraft and Left 4 Dead, Fortnite has up to four players cooperating on various missions on randomly-generated maps to collect resources, build fortifications around defensive objectives that are meant to help fight the storm and protect survivors, and construct weapons and traps to engage in combat with waves of these creatures that attempt to destroy the objectives. Players gain rewards through these missions to improve their hero characters, support teams, and arsenal of weapon and trap schematics to be able to take on more difficult missions. The game is supported through microtransactions to purchase in-game currency that can be used towards these upgrades.</p>
+        <button id="animateBtn" class="btn btn-primary">Press me</button>
+
+        <button id="animateBtn2" class="btn btn-primary">Hide heading</button>
+      </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script>
+    $(function(){
+          $('#animateBtn').click(function(){
+            animate('#anim-head', 'bounce');
+            animate('#anim-body', 'rubberBand');
+            return false;
+          });
+
+          $('#animateBtn2').click(function(){
+            animate('header', 'slideOutUp');
+            setTimeout(function(){
+              $('header').css('visibility','hidden');
+            }, 1000);
+            return false;
+          });
+
+          function animate(element, animation){
+            $(element).addClass('animated '+animation);
+            var wait = setTimeout(function(){
+              $(element).removeClass('animated '+animation);
+            }, 1000);
+          }
+        })
+    </script>
+  </body>
+</html>
